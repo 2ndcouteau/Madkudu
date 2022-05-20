@@ -3,6 +3,7 @@
 
 import s3fs
 import click
+from halo import Halo
 
 @click.group()
 def main():
@@ -23,7 +24,8 @@ def getFile(year, month, host, filename):
 
     with fs.open(f"{host}/{year}/{month}/{filename}", 'rb') as f:
         out = open(f"{year}_{month}.csv", 'wb')
-        out.write(f.read())
+        with Halo(text=f"Writing '{year}_{month}.csv' in progress", spinner='dots'):
+            out.write(f.read())
 
 
 if __name__ == "__main__":
