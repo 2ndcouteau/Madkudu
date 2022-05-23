@@ -27,7 +27,7 @@ By default, the downloaded file will be `s3://work-sample-mk/YEAR/MONTH/events.c
 
 **YEAR** and **MONTH** are the values of the current date **minus 1 month**.
 
-This will let you use the script to automate the download of file each 1st of month, by a `conjob` or in `Airflow` for exemple.
+This will let you use the script to automate the download of file each 1st of month, by a `cronjob` or in `Airflow` for exemple.
 
 A feature will block a file if this one has already been inserted in the DB.
 
