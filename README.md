@@ -44,8 +44,11 @@ You will get a *Madkudu_events.db* in your current folder
 
 
 For futur evolutions, you can also pass those options:
+
 **-y, --year** TEXT      Format YYYY::2022
+
 **-m, --month** TEXT     Format MM::04
+
 Will let you choose a specific date
 ```
 ./main.py loadfile -y2021 -m04
@@ -63,18 +66,18 @@ Will let you specify the path and the name of you destination DB
 
 The exercice was to get CSV data from an S3 host and provide the data in a usable format to be able to make request.
 In this purpose, you would like to clean the data:
-**-c, --clean**          Clean the data
 
+**-c, --clean**          Clean the data
 ```
 ./main.py loadfile -y2021 -m04 --clean
 ```
 
 Currently, this option will merge duplicated rows and add a counter in a new column.
-In addition, we could imagine to remove data outside de current month.
+In addition, we could imagine to remove data outside de current month or add validation on columns values.
 
 **-d, --debug**          Show error details
 ```
-./main.py loadfile -y1850 -m04 -d
+./main.py loadfile -y2021 -m04 -h 's3://badhost' -d
 ```
 Allow the program to return stack trace for debug purpose. Else a simple error message is shown.
 
@@ -90,9 +93,12 @@ Give you a way to download the file without insert in a sqlite DB
 ```
 You will get a fresh file `madkudu_event.csv` in your current directory
 
-**DEST** - Specify the destination path and the filename\n
-    Default: './{year}_{month}_{filename}'\n
-**SOURCE** - Specify the source path and the filename\n
+**DEST** - Specify the destination path and the filename
+
+    Default: './{year}_{month}_{filename}'
+    
+**SOURCE** - Specify the source path and the filename
+
     Default: '{host}/{year}/{month}/{filename}'
 
 
@@ -114,7 +120,7 @@ main.py testdb
 
 So for now, the program is able to download a file from an s3 and to insert it in a sqliteDB
 
-For an industrialisation purpose I would give you some suggestions:
+For an industrialization purpose, I would give you some suggestions:
 
 ### - On a ops perspective:
 - Use Docker
@@ -180,4 +186,5 @@ In addition of this, we could imagine to remove rows outside the scope of the ta
 
 
 I hope you will enjoy my work and call me back for the next step.
+
 Thank you
