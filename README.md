@@ -27,7 +27,7 @@ By default, the downloaded file will be `s3://work-sample-mk/YEAR/MONTH/events.c
 
 **YEAR** and **MONTH** are the values of the current date **minus 1 month**.
 
-This will let you use the script to automate the download of file each 1st of month, by a `cronjob` or in `Airflow` for exemple.
+This will let you use the script to automate the download of file each 1st of month, by a `cronjob` or in `Airflow` for example.
 
 A feature will block a file if this one has already been inserted in the DB.
 
@@ -180,7 +180,7 @@ I also add Type on column during the table creation.
 I added an error management and a debug option to keep the tool clean for a casual usage.
 
 I also finetuned all the options of the CLI to respect the consign to have a tool `fully automated and able to recurrently
-and periodically retrieving and processing the data without any external action`
+and periodically retrieving and processing the data without any external action`.
 That why, by default, the tool get the date of the previous month with the aim to run it periodically every 1st of the month.
 
 And to open a way of the data transformation, I add a feature `--clean` to merge duplicated rows and add a column 'count' to keep the information.
