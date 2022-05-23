@@ -140,13 +140,15 @@ We should also be able to set a log level by default to avoid to much verbose lo
 
 Levels could be (in order of priority): `[ERR_TRACE, WARN_TRACE, ERR, WARN, INFO, DEBUG, TRACE, LOG]`
 
+All these logs could be sent to **Elasticsearch** to facilitate log mining and create alert triggers.
 
 ### - On data perspective:
 - Use postgreSQL instead of sqlite as a DB
 - We could add more cleaning transformation.
 
-I would also suggest to decoralate this point of the code and create an external config file
+I also suggest to decouple this from the code and create an external configuration file to keep the code clear if other data sources are added.
 
+Also, if we expect to have tons of data, I would suggest to migrate to **Spark**. In that way, we should be able to manage TB of data and transform and validate all this data before save it in cloud solution like **BigQuery** or **Redshift**.
 
 ## **Development worflow**
 
