@@ -1,6 +1,6 @@
 # **Madkudu**
 
-Hello, welcome on the madkudu exercice.
+Hello, welcome on the madkudu exercise.
 
 ---
 ## **Installation**
